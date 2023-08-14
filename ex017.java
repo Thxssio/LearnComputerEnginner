@@ -8,6 +8,9 @@ public class funcionario{
         Cargo = C;
         Salario = S;
     }
+    void impostoderenda{
+
+        }
 
 
 }   
