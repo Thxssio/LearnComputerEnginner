@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/aluno/thx/p1/main.xst" -ofn "/home/aluno/thx/p1/main.syr" 
+xst -intstyle ise -ifn "/home/aluno/thx/p1/main.xst" -ofn "/home/aluno/thx/p1/main.syr" 
