@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/aluno/thx/p1/main_isim_beh.exe" -prj "/home/aluno/thx/p1/main_beh.prj" "work.main" 
