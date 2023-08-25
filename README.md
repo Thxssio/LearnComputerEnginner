@@ -21,5 +21,6 @@
 <dl> MQTT</dl>
 <dl> Raspberry</dl>
 <dl> Kali Linux</dl>
+<dl> VHDL-FPGA</dl>
     </ul>
 </details>
