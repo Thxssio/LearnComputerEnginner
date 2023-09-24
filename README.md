@@ -10,6 +10,7 @@
 <details>
   <ul>
  <dl>Python</dl>
+<dl>Java</dl>
 <dl> HTML</dl>
  <dl>CSS</dl>
 <dl> JS</dl>
