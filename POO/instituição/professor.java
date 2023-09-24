@@ -17,4 +17,9 @@ public class professor extends pessoa{
     public void receberAumento(float aumento){
         this.salario += aumento;
     }    
+
+    @Override
+    public String toString(){
+        return "Nome: " + this.getNome() + ", " + "Idade: " + this.getIdade() + ", " + "Sexo: " + this.getSexo() + ", " + "Especialidade: " + getEspecialidade() + ", " + "Salario: " + getSalario(); 
+       }
 }

@@ -21,4 +21,10 @@ public class funcionario extends pessoa{
     public void setTrabalhando(boolean trabalhando){
         this.trabalhando = trabalhando;
     }
+
+    @Override
+    public String toString(){
+        return "Nome: " + this.getNome() + ", " + "Idade: " + this.getIdade() + ", " + "Sexo: " + this.getSexo() + ", " + "Trabalhando? " + this.getTrabalhando() + ", " + "Setor: " + this.getSetor();
+    }
+
 }

@@ -19,4 +19,9 @@ public class aluno extends pessoa{
     public void setCurso(String curso){
         this.curso = curso;
     }
+
+    @Override
+    public String toString(){
+        return "Nome: " + this.getNome() + ", " + "Idade: " + this.getIdade() + ", " + "Sexo: " + this.getSexo() + ", " + "Matricula: " + getMatricula() + ", " + "Curso: " + getCurso(); 
+       }
 }

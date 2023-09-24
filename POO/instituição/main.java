@@ -26,6 +26,8 @@ public class main{
 
         f1.mudarTrabalho();
 
+        p1.setEspecialidade("Matematica");
+
         System.out.println(a1.toString());
         System.out.println(p1.toString());
         System.out.println(f1.toString());  
