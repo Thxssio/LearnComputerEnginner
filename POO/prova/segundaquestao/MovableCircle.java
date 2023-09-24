@@ -28,12 +28,6 @@ public class MovableCircle implements Movable {
       center.moveRight();
     }
     
-    public static void main(String args[]) {
-  
-       MovableCircle c = new MovableCircle(0,0,1,1,5);
-       c.moveUp();
-       c.moveRight();
-       System.out.println(c);
-    }
+
   
   }
