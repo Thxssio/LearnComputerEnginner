@@ -25,7 +25,7 @@ begin
 		elsif cont < 300000000 * 2/16 then if cont2 < 2000000 * 1/3
 			then    sel <= "0111";
 				d   <= "0111101";
-																										  cont2 := cont2 + 1;
+				cont2 := cont2 + 1;
 		elsif cont2 < 2000000 * 2/3
 				then sel <= "1011";
 				d   <= "0111111";
