@@ -26,6 +26,7 @@ public class App {
     private DataOutputStream output;
     private DataInputStream serverInput;
     private User currentUser; // Alterada para a classe base User
+    private List<User> usuariosConectados;
 
 
     public static void main(String[] args) {
@@ -41,6 +42,7 @@ public class App {
 
     public App() {
         initializeMain();
+        usuariosConectados = new ArrayList<>();
     }
     
    
@@ -109,6 +111,7 @@ public class App {
     }
     private List<User> readUsersFromCSV(String fileName) {
         List<User> users = new ArrayList<>();
+        boolean foundThxssio = false;
     
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
@@ -120,9 +123,21 @@ public class App {
                     String telefone = data[2];
                     String username = data[3];
     
-                    // Criar um novo usuário com as informações disponíveis no CSV
-                    User user = new User(nome, email, telefone, username);
+                    User user;
+                    if (username.equals("thxssio") && !foundThxssio) {
+                        user = new Admin(nome, email, telefone, username);
+                        ((Admin) user).setIsAdmin(true);
+                        foundThxssio = true;
+                    } else {
+                        user = new User(nome, email, telefone, username);
+                    }
+    
                     users.add(user);
+    
+                    // Se o usuário for "thxssio" e for um administrador, mostrar os dados dos usuários conectados
+                    if (user instanceof Admin && ((Admin) user).isAdmin()) {
+                        ((Admin) user).showConnectedUsersData(users);
+                    }
                 }
             }
         } catch (IOException e) {
@@ -183,6 +198,7 @@ public class App {
                 e.printStackTrace();
             }
         }
+        usuariosConectados.remove(currentUser);
     }
 
     private void registerUser(String name, String email, String phone, String username) {
@@ -343,7 +359,50 @@ public class App {
         registrationFrame.setContentPane(registrationPanel);
         registrationFrame.setVisible(true);
     }
-
+    private void showConnectedUsers() {
+        JFrame connectedUsersFrame = new JFrame();
+        connectedUsersFrame.setTitle("Usuários Conectados");
+        connectedUsersFrame.setSize(400, 300);
+        connectedUsersFrame.setLocationRelativeTo(null);
+    
+        JPanel connectedUsersPanel = new JPanel(new GridLayout(usuariosConectados.size(), 4));
+    
+        JLabel nameLabel = new JLabel("Nome");
+        JLabel usernameLabel = new JLabel("Usuário");
+        JLabel emailLabel = new JLabel("Email");
+        JLabel phoneLabel = new JLabel("Telefone");
+        JLabel typeLabel = new JLabel("Tipo"); // Adicionei um rótulo para exibir o tipo de usuário
+    
+        connectedUsersPanel.add(nameLabel);
+        connectedUsersPanel.add(usernameLabel);
+        connectedUsersPanel.add(emailLabel);
+        connectedUsersPanel.add(phoneLabel);
+        connectedUsersPanel.add(typeLabel); // Adicionando o rótulo do tipo de usuário à interface
+    
+        for (User user : usuariosConectados) {
+            JLabel name = new JLabel(user.getNome());
+            JLabel username = new JLabel(user.getUsername());
+            JLabel email = new JLabel(user.getEmail());
+            JLabel phone = new JLabel(user.getTelefone());
+            
+            JLabel userType;
+            if (user instanceof Admin) {
+                userType = new JLabel("Admin");
+            } else {
+                userType = new JLabel("Usuário");
+            }
+    
+            connectedUsersPanel.add(name);
+            connectedUsersPanel.add(username);
+            connectedUsersPanel.add(email);
+            connectedUsersPanel.add(phone);
+            connectedUsersPanel.add(userType); // Adicionando o tipo de usuário à interface
+        }
+    
+        connectedUsersFrame.add(connectedUsersPanel);
+        connectedUsersFrame.setVisible(true);
+    }
+    
     private void connectToServer() {
         try {
             con = new Socket("127.0.0.1", 8080);
@@ -369,6 +428,7 @@ public class App {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        usuariosConectados.add(currentUser);
     }
 
     private void updateInterface(String message) {

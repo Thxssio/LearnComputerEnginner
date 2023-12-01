@@ -28,4 +28,8 @@ public class User {
     public String getUsername() {
         return username;
     }
+    @Override
+    public String toString() {
+        return "User: " + nome + ", " + email + ", " + telefone + ", " + username;
+    }
 }
