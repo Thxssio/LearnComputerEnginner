@@ -5,10 +5,13 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/thxssio/projects/LearnComputerEnginner/VHDL/Lucky7_Game/Lucky7_Game.vhd" Line 56: Assignment to <arg fmt="%s" index="1">led_enable</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/thxssio/projects/LearnComputerEnginner/VHDL/Lucky7_Game/Lucky7_Game.vhd" Line 57: Assignment to <arg fmt="%s" index="1">led_enable</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_seven_seg</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_seven_seg</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">led1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Lucky7_Game</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">7 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;led2&gt; &lt;led3&gt; &lt;led6&gt; &lt;led4&gt; &lt;led5&gt; &lt;led7&gt; &lt;led8&gt; </arg>
 </msg>
 
 </messages>

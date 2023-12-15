@@ -7,7 +7,7 @@ entity Lucky7_Game is
         clk : in STD_LOGIC;            -- Clock input
         reset : in STD_LOGIC; 
         button : in STD_LOGIC; 
-        seven_seg : out STD_LOGIC_VECTOR(6 downto 0);  -- Seven-segment display output
+        seven_seg : out STD_LOGIC_VECTOR(6 downto 0);  -- Saída de exibição de sete segmentos
         win : out STD_LOGIC;           -- Win signal output
         led1 : out STD_LOGIC;          -- Output for LED 1
         led2 : out STD_LOGIC;          -- Output for LED 2
@@ -22,12 +22,13 @@ end Lucky7_Game;
 
 architecture Behavioral of Lucky7_Game is 
     signal debounced_button : std_logic;  -- Sinal do botão após debounce
-    signal display_value : integer range 0 to 15 := 0;
+    signal display_value : integer range 0 to 15 := 0; -- Valores do display
     signal seven_seg_output : STD_LOGIC_VECTOR(6 downto 0);
     signal led_enable : STD_LOGIC := '0';
     signal reset_debounced : std_logic := '0'; 
     signal rand_num : unsigned(3 downto 0) := (others => '0'); -- Random number signal
-    
+    signal counter : integer range 0 to 25000000 := 0;  -- Contador para o intervalo de piscagem dos LEDs
+
     component Debounce_Button
         generic (max : integer := 10000000);
         Port (clk : in STD_LOGIC;
@@ -42,7 +43,7 @@ begin
     -- Instanciando o módulo de debounce para tratar o botão e o botão de reset
     debounce_button_instance: Debounce_Button
         generic map (
-            max => 10000000  -- Pode alterar o valor se necessário
+            max => 10000000  
         )
         port map (
             clk => clk,
@@ -68,21 +69,37 @@ begin
         end if;
     end process;
 
-    -- Controle dos LEDs
-    process(rand_num)
+    -- Controle dos LEDs e do tempo de piscar
+    process(clk)
     begin
-        case to_integer(rand_num) is
-            when 7 =>
-                -- Ligar todos os LEDs quando for 7
-                led1 <= '1';
-                led2 <= '1';
-                led3 <= '1';
-                led4 <= '1';
-                led5 <= '1';
-                led6 <= '1';
-                led7 <= '1';
-                led8 <= '1';
-            when others =>
+        if rising_edge(clk) then
+            if rand_num = "0111" then -- Se for igual a 7
+                if counter < 12500000 then -- Tempo aproximado de meio segundo
+                    -- Liga os LEDs
+                    led1 <= '1';
+                    led2 <= '1';
+                    led3 <= '1';
+                    led4 <= '1';
+                    led5 <= '1';
+                    led6 <= '1';
+                    led7 <= '1';
+                    led8 <= '1';
+                elsif counter < 25000000 then
+                    -- Desliga os LEDs
+                    led1 <= '0';
+                    led2 <= '0';
+                    led3 <= '0';
+                    led4 <= '0';
+                    led5 <= '0';
+                    led6 <= '0';
+                    led7 <= '0';
+                    led8 <= '0';
+                else
+                    counter <= 0; -- Reseta o contador após meio segundo
+                end if;
+                counter <= counter + 1; -- Incrementa o contador de tempo
+            else
+                -- Outro comportamento quando não for 7
                 led1 <= '0';
                 led2 <= '0';
                 led3 <= '0';
@@ -91,7 +108,9 @@ begin
                 led6 <= '0';
                 led7 <= '0';
                 led8 <= '0';
-        end case;
+                counter <= 0; -- Reseta o contador se não for 7
+            end if;
+        end if;
     end process;
 
     -- Display the random number
@@ -117,3 +136,4 @@ begin
     -- Saída de vitória (supondo que será definida em algum estado específico)
     win <= '0'; 
 end Behavioral;
+

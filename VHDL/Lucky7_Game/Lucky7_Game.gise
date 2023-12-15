@@ -112,7 +112,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1702633011" xil_pn:in_ck="-3809242138019369896" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-227881245935976799" xil_pn:start_ts="1702633008">
+    <transform xil_pn:end_ts="1702659490" xil_pn:in_ck="-3809242138019369896" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-227881245935976799" xil_pn:start_ts="1702659487">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -134,7 +134,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1702633016" xil_pn:in_ck="5769564748553580529" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-1429870566946512205" xil_pn:start_ts="1702633014">
+    <transform xil_pn:end_ts="1702659493" xil_pn:in_ck="5769564748553580529" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-1429870566946512205" xil_pn:start_ts="1702659490">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Lucky7_Game.bld"/>
@@ -143,7 +143,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1702633020" xil_pn:in_ck="5769564791172023506" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1702633016">
+    <transform xil_pn:end_ts="1702659498" xil_pn:in_ck="5769564791172023506" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1702659493">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Lucky7_Game.pcf"/>
@@ -156,7 +156,7 @@
       <outfile xil_pn:name="Lucky7_Game_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1702633025" xil_pn:in_ck="4138812160677295435" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1702633020">
+    <transform xil_pn:end_ts="1702659504" xil_pn:in_ck="4138812160677295435" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1702659498">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Lucky7_Game.ncd"/>
@@ -170,7 +170,7 @@
       <outfile xil_pn:name="Lucky7_Game_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1702633030" xil_pn:in_ck="-7720715397420250373" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1702633025">
+    <transform xil_pn:end_ts="1702659509" xil_pn:in_ck="-7720715397420250373" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1702659504">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Lucky7_Game.bgn"/>
@@ -182,7 +182,7 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1702633025" xil_pn:in_ck="5769559165537550542" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1702633023">
+    <transform xil_pn:end_ts="1702659504" xil_pn:in_ck="5769559165537550542" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1702659502">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Lucky7_Game.twr"/>
@@ -190,8 +190,10 @@
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
     </transform>
     <transform xil_pn:end_ts="1702633012" xil_pn:in_ck="-7720715397420250242" xil_pn:name="TRAN_postSynthesisSimModel" xil_pn:prop_ck="-4085845436335923604" xil_pn:start_ts="1702633011">
-      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="netgen"/>
       <outfile xil_pn:name="netgen/synthesis/Lucky7_Game_synthesis.nlf"/>
       <outfile xil_pn:name="netgen/synthesis/Lucky7_Game_synthesis.vhd"/>

@@ -1,9 +1,8 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Dec 15 06:37:00 2023
+// Written by: Map P.20131013 on Fri Dec 15 13:58:17 2023
 //! **************************************************************************
 
 SCHEMATIC START;
-COMP "led1" LOCATE = SITE "T11" LEVEL 1;
 COMP "led2" LOCATE = SITE "R11" LEVEL 1;
 COMP "led3" LOCATE = SITE "N11" LEVEL 1;
 COMP "led4" LOCATE = SITE "M11" LEVEL 1;
@@ -11,6 +10,7 @@ COMP "led5" LOCATE = SITE "V15" LEVEL 1;
 COMP "led6" LOCATE = SITE "U15" LEVEL 1;
 COMP "led7" LOCATE = SITE "V16" LEVEL 1;
 COMP "led8" LOCATE = SITE "U16" LEVEL 1;
+COMP "led1" LOCATE = SITE "T11" LEVEL 1;
 COMP "clk" LOCATE = SITE "V10" LEVEL 1;
 COMP "seven_seg<0>" LOCATE = SITE "L14" LEVEL 1;
 COMP "seven_seg<1>" LOCATE = SITE "N14" LEVEL 1;
