@@ -1,0 +1,20 @@
+Release 14.7 - netgen P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: netgen -intstyle ise -ar Structure -tm Lucky7_Game -w -dir
+netgen/synthesis -ofmt vhdl -sim Lucky7_Game.ngc Lucky7_Game_synthesis.vhd  
+
+Reading design 'Lucky7_Game.ngc' ...
+Flattening design ...
+Processing design ... 
+  Preping design's networks ...
+  Preping design's macros ...
+Writing VHDL netlist
+'/home/thxssio/projects/LearnComputerEnginner/VHDL/Lucky7_Game/netgen/synthesis/
+Lucky7_Game_synthesis.vhd' ...
+INFO:NetListWriters:635 - The generated VHDL netlist contains Xilinx UNISIM
+   simulation primitives and has to be used with UNISIM library for correct
+   compilation and simulation. 
+Number of warnings: 0
+Number of info messages: 1
+Total memory usage is 308008 kilobytes

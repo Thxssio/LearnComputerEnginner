@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/thxssio/projects/LearnComputerEnginner/VHDL/Lucky7_Game/Lucky7_Game.ncd
+OUTFILE=/home/thxssio/projects/LearnComputerEnginner/VHDL/Lucky7_Game/Lucky7_Game.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/thxssio/projects/LearnComputerEnginner/VHDL/Lucky7_Game
+LICENSE=WebPack
+USER_INFO=__0_0_0
